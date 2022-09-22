@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="DummyApp.Stats"
+             Title="Statistics">
+    <Grid>
+        <!-- Style -->
+        <Grid x:Name="MenuContainer">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Aqua" Offset="0.0"/>
+                    <GradientStop Color="Blue" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GridArea_Tapped" />
+                <!-- Detects Grid tapped-->
+            </Grid.GestureRecognizers>
+            <!-- Menu -->
+        </Grid>
+
+
+        <!-- Main Content -->
+        <Grid x:Name="MainContentGrid" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="White" Offset="0.0"/>
+                    <GradientStop Color="White" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <skia:SKLottieView
+                x:Name="ScrollHelper"
+                Source="LottieAnimations/rightswipe.json"
+                RepeatCount="-1"
+                Grid.Row="3"
+                WidthRequest="150"
+                HeightRequest="150"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                ZIndex="1"/>
+            <Label x:Name="ScrollDetector" BackgroundColor="Transparent" Grid.RowSpan="7" ZIndex="6" WidthRequest="100" HorizontalOptions="Start">
+                <Label.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Left" Swiped="SwipeGestureRecognizer_Swiped_Close"/>
+                    <SwipeGestureRecognizer Direction="Right" Swiped="SwipeGestureRecognizer_Swiped_Open"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <ScrollView Orientation="Vertical" x:Name="StatsList" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="3" BackgroundColor="Black" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <!-- Content here -->
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="TimesOpenedApp" Text="Loading Content..."/>
+                    <Frame HeightRequest="500" WidthRequest="300" BackgroundColor="White">
+                        <ScrollView Orientation="Horizontal" BackgroundColor="Transparent" IsClippedToBounds="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ZIndex="1">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="test LMAO" TextColor="Black"/>
+                                <Label Text="test LMAO" TextColor="Black"/>
+                                <Label Text="test LMAO" TextColor="Black"/>
+                                <Label Text="test LMAO" TextColor="Black"/>
+                                <Label Text="test LMAO" TextColor="Black"/>
+                                <Label Text="test LMAO" TextColor="Black"/>
+                            </StackLayout>
+                        </ScrollView>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+
+            <Button Clicked="MenuButton_Tapped" Text="Menu" FontSize="50" x:Name="OpenMenu" BorderColor="Black" BorderWidth="3" Grid.Column="0" Grid.Row="0" Grid.RowSpan="7" WidthRequest="265"/>
+        </Grid>
+    </Grid>
+</ContentPage>
