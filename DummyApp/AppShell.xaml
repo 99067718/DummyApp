@@ -5,8 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:DummyApp"
     Shell.FlyoutBehavior="Flyout"
-    Shell.TabBarIsVisible="True">
-    <TabBar>
+    >
+
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
@@ -15,6 +15,6 @@
             Title="Statistics"
             ContentTemplate="{DataTemplate local:Stats}"
             Route="Statistics"/>
-    </TabBar>
+
 
 </Shell>
