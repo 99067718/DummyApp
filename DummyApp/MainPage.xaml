@@ -16,26 +16,7 @@
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
-            <Label
-                Text="Try using the flyout menu, or the counter button."
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-            <Label Text="when the dotnetbot rotates backwards you are supposed to go to the other page."/>
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+            <WebView x:Name="WebsiteView" Source="https://www.r-go-tools.com"/>
 
         </VerticalStackLayout>
     </ScrollView>
