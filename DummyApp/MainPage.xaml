@@ -11,9 +11,7 @@
                 <VerticalStackLayout BackgroundColor="Gray">
                     <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Fill" ZIndex="0">
                         <Image Source="dotnet_bot.svg" x:Name="StatusIcon" HeightRequest="50" WidthRequest="50" HorizontalOptions="Start"/>
-
                         <Label x:Name = "PullToRefreshLabel"  BackgroundColor="Transparent" Text="Pull to Refresh!" HorizontalOptions="Center" TextColor="Black"/>
-                        
                         <Image Source="dotnet_bot.svg" x:Name="StatusIcon2" HeightRequest="50" HorizontalOptions="End" WidthRequest="50"/>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
