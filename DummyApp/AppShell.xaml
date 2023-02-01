@@ -3,18 +3,18 @@
     x:Class="DummyApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:DummyApp"
-    Shell.FlyoutBehavior="Flyout"
-    >
-
-        <ShellContent
-            Title="Home"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
-        <ShellContent
-            Title="Statistics"
-            ContentTemplate="{DataTemplate local:Stats}"
-            Route="Statistics"/>
-
-
+    xmlns:local="clr-namespace:DummyApp">
+    <TabBar>
+        <Tab
+            Title="Main"
+            Icon="dotnet_bot.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab 
+            Title="Overloaded"
+            Icon="dotnet_bot.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:OverloadedPage}"/>
+        </Tab>
+    </TabBar>
+     
 </Shell>
