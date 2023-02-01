@@ -8,7 +8,10 @@ public partial class OverloadedPage : ContentPage
 	}
 	protected async override void OnNavigatedTo(NavigatedToEventArgs args)
 	{
-		Items.Clear();
+        // This is the closest I can make it to an SQL database
+		// that gets updated every time you re-open the page
+		// without having to create an actual SQL database
+        Items.Clear(); 
 		await Task.Delay(100);
 		_ = loadStuff();
 	}
